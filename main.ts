@@ -10,7 +10,8 @@ const LINE =
   "My car beeps when I forget my seatbelt, but stays silent about every bad decision I've ever made.";
 
 // Gate mirror: the house gate accepts 1-140 characters of non-whitespace
-// text. Fail loudly here rather than write a line the gate would refuse.
+// text (RULES.txt: "UTF-8 text of 1 to 140 characters, not only white
+// space"). Fail loudly here rather than write a line the gate would refuse.
 if (LINE.length < 1 || LINE.length > 140 || !LINE.trim()) {
   throw new Error(`entry line is ${LINE.length} chars, outside the 1-140 gate`);
 }
